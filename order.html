@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form - Rajal Stationary & Digital</title>
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Include AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Include FontAwesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* Custom styles */
+    body {
+      background: linear-gradient(to right, #1c1c1c, #434343);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header, footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      border-bottom: 2px solid #764ba2;
+      border-top: 2px solid #764ba2;
+    }
+
+    .footer-links a {
+      color: #fff;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #f7f302;
+    }
+
+    .form-section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-section h3 {
+      border-bottom: 2px solid #764ba2;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 15px;
+      outline: none;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #ccc;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .form-input-group {
+      position: relative;
+    }
+
+    .form-input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    .form-input-group .form-input {
+      padding-left: 40px;
+    }
+
+    .gradient-button {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      color: #fff;
+      font-weight: bold;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .gradient-button:hover {
+      background: linear-gradient(90deg, #e52e71, #ff8a00);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #ff8a00, #e52e71);
+      margin: 40px 0;
+    }
+
+    .custom-checkbox input:checked + .checkmark {
+      background-color: #e52e71;
+      border-color: #e52e71;
+    }
+
+    .custom-checkbox .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .custom-checkbox input:checked + .checkmark::after {
+      display: block;
+    }
+
+    .custom-checkbox .checkmark::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid #fff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+      display: none;
+    }
+
+    .gradient-title {
+      background: linear-gradient(to right, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <header class="text-gray-100" data-aos="fade-down">
+    <div class="container mx-auto py-4">
+      <h1 class="text-3xl font-bold text-center uppercase">Rajal Stationary & Digital</h1>
+      <nav class="text-center mt-4">
+        <ul>
+          <li class="inline-block mx-4"><a href="index.html">Home</a></li>
+          <li class="inline-block mx-4"><a href="order.html">Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="order" class="py-20" data-aos="fade-up">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8 gradient-title">Order Form</h2>
+      <div class="form-section mx-auto max-w-2xl" data-aos="fade-up">
+        <form>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 gradient-title">Customer Details</h3>
+            <div class="form-input-group">
+              <i class="fas fa-user form-input-icon"></i>
+              <input type="text" name="name" placeholder="Your Name" class="form-input" required>
+            </div>
+            <div class="form-input-group">
+              <i class="fas fa-envelope form-input-icon"></i>
+              <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+            </div>
+            <div class="form-input-group">
+              <i class="fas fa-phone form-input-icon"></i>
+              <input type="text" name="phone" placeholder="Your Phone Number" class="form-input" required>
+            </div>
+            <div class="form-input-group">
+              <i class="fas fa-calendar form-input-icon"></i>
+              <input type="date" name="date" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 gradient-title">Items</h3>
+            <textarea name="items" placeholder="List your items here" rows="4" class="form-textarea" required></textarea>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 gradient-title">Budget</h3>
+            <div class="form-input-group">
+              <i class="fas fa-dollar-sign form-input-icon"></i>
+              <input type="number" name="budget" placeholder="Your Budget" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="mb-8">
+            <label class="custom-checkbox relative inline-flex items-center">
+              <input type="checkbox" class="form-checkbox hidden" required>
+              <span class="checkmark absolute"></span>
+              <span class="ml-6 text-sm">I agree to the <a href="#" class="text-yellow-500 hover:text-yellow-400">Terms and Conditions</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="gradient-button">Submit Order</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer data-aos="fade-up">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Rajal Stationary & Digital. All rights reserved.</p>
+      <div class="footer-links mt-4">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include AOS library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init();
+  </script>
+</body>
+</html>
